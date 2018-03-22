@@ -1,0 +1,23 @@
+{
+  "name": "gearshare",
+  "version": "1.0.0",
+  "description": "Landing page for gear sharing website",
+  "main": "script.js",
+  "scripts": {
+    "compile:sass": "node-sass sass.scss style.css -w"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tabbatharenea/GearShare.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tabbatharenea/GearShare/issues"
+  },
+  "homepage": "https://github.com/tabbatharenea/GearShare#readme",
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
+}
