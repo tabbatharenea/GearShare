@@ -1,8 +1,10 @@
 $color-primary: rgba(0, 160, 160, 0.781);
 $color-secondary: rgb(161, 194, 221);
-$color-tertiary: rgb(226, 228, 229);
+$color-tertiary: rgba(226, 228, 229, 0.952);
 $color-grey-dark: rgb(151, 151, 155);
 
+$font1:'Lato', sans-serif;
+$font2: 'Rammetto One', cursive;
 
 
 *,
@@ -23,58 +25,75 @@ html {
 }
 
 body{
+height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
-    font-family: "Lato", sans-serif;
+    background-color: $color-primary;
+    font-family: $font1;
     font-weight: 400;
     line-height: 1.8rem;
     color: $color-grey-dark;
     padding: 1rem;
     list-style-type: none;
     font-size: 1.3rem;
+
+    background-image: linear-gradient( to right bottom,
+    rgba($color-primary, 0.7),
+    rgba($color-secondary, 0.5)),
+    url(images/guitar.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 header {
     order: 1;
-    background-image: linear-gradient( to right top,
-    rgba($color-primary, 0.9),
-    rgba($color-tertiary, 0.5)),
-    url(images/guitar.jpg);
     background-size: cover;
     background-position: 50% 8%;
+    background-attachment: fixed;
     position: relative;
-    width: 90%;
-    margin: 0 auto;
+    width: 80%;
+    // margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    color: white;
+    color: rgb(226, 228, 229);
     height: 15vh;
     border-radius: 25px;
+    border: 1rem solid $color-tertiary;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: rgba(0, 160, 160, 0.473);
+
     animation-name: moveInRight;
     animation-duration: 1s;
     animation-delay: 0s;
     animation-timing-function: ease-in;
 
-    h1{
-        // font-family: 'Patua One', cursive;
-        margin: 3rem;
+    h1 {
+        -webkit-background-clip: text;
+        margin: 1rem;
+        font-family: $font2;
         text-align: center;
         font-size: 6rem;
-        letter-spacing: 1rem;
+        letter-spacing: .6rem;
+        text-shadow: $color-primary;
     }
     h2 {
+        margin-top: .5rem;
+        font-weight: 300;
         text-align: center;
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 }
 
 nav {
+    margin-top: 10rem;
     border-radius: 25px;
-    order: 3;
+    order: 2;
     width:90%;
     height: 2.5rem;
     display: flex;
@@ -93,7 +112,7 @@ nav {
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 
     a {
         border-radius: 25px;
@@ -107,7 +126,7 @@ nav {
 }
 
 .img-container {
-    order: 2;
+    order: 3;
     margin-top: 5rem;
     width: 100%;
     display: flex;
@@ -115,25 +134,73 @@ nav {
     justify-content: space-around;
 
 
-    img {
-        border-radius: 50px;
-        width: 40%;
-        height: 100%;
-        padding: 2rem;
+    div {
+        border-radius: 25px;
+        padding: 1rem;
+        position: relative;
+        background-color: $color-tertiary;
+        width: 30%;
+        height: 60%;
+        // transition: .55s all;
+
+
+        img {
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+        }
+
+        p {
+            font-family: $font2;
+            text-align: center;
+            z-index: 2;
+            position: fixed;
+            top: 24%;
+            color: white;
+            font-size: 6rem;
+            line-height: 9rem;
+            width: 29.5%;
+            height: 23.38%;
+            background-color: rgba(0, 160, 160, 0.233);
+            padding: 14% 0;
+            border-radius: 25px;
+
+        }
+
     }
 
 
-    img:nth-child(1){
+    div:hover {
+        transform: scale(1.1);
+    }
+
+    div:hover  p {
+        transform: scale(1.1);
+        background-color:rgba(0, 160, 160, 0.0);
+        transform: translateX(50%);
+    }
+
+
+
+    div:nth-of-type(1){
+
+
+
         animation-name: moveInLeft;
         animation-duration: 1s;
         animation-delay: 0s;
         animation-timing-function: ease-in;
     }
-    img:nth-child(2){
+
+
+    div:nth-of-type(2){
+
         animation-name: moveInRight;
         animation-duration: 1s;
         animation-delay: 0s;
         animation-timing-function: ease-in;
+
     }
 }
 

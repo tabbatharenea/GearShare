@@ -13,49 +13,64 @@ html {
   font-size: 62.5%; }
 
 body {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: rgba(0, 160, 160, 0.781);
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.8rem;
   color: #97979b;
   padding: 1rem;
   list-style-type: none;
-  font-size: 1.3rem; }
+  font-size: 1.3rem;
+  background-image: linear-gradient(to right bottom, rgba(0, 160, 160, 0.7), rgba(161, 194, 221, 0.5)), url(images/guitar.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
 
 header {
   order: 1;
-  background-image: linear-gradient(to right top, rgba(0, 160, 160, 0.9), rgba(226, 228, 229, 0.5)), url(images/guitar.jpg);
   background-size: cover;
   background-position: 50% 8%;
+  background-attachment: fixed;
   position: relative;
-  width: 90%;
-  margin: 0 auto;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  color: white;
+  color: #e2e4e5;
   height: 15vh;
   border-radius: 25px;
+  border: 1rem solid rgba(226, 228, 229, 0.952);
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background-color: rgba(0, 160, 160, 0.473);
   animation-name: moveInRight;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-timing-function: ease-in; }
   header h1 {
-    margin: 3rem;
+    -webkit-background-clip: text;
+    margin: 1rem;
+    font-family: "Rammetto One", cursive;
     text-align: center;
     font-size: 6rem;
-    letter-spacing: 1rem; }
+    letter-spacing: .6rem;
+    text-shadow: rgba(0, 160, 160, 0.781); }
   header h2 {
+    margin-top: .5rem;
+    font-weight: 300;
     text-align: center;
-    font-size: 2rem; }
+    font-size: 1.7rem; }
 
 nav {
+  margin-top: 10rem;
   border-radius: 25px;
-  order: 3;
+  order: 2;
   width: 90%;
   height: 2.5rem;
   display: flex;
@@ -73,7 +88,7 @@ nav {
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-around; }
+    justify-content: space-between; }
     nav ul a {
       border-radius: 25px;
       padding: .5rem 1.3rem; }
@@ -81,23 +96,50 @@ nav {
       background-color: rgba(0, 160, 160, 0.781); }
 
 .img-container {
-  order: 2;
+  order: 3;
   margin-top: 5rem;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around; }
-  .img-container img {
-    border-radius: 50px;
-    width: 40%;
-    height: 100%;
-    padding: 2rem; }
-  .img-container img:nth-child(1) {
+  .img-container div {
+    border-radius: 25px;
+    padding: 1rem;
+    position: relative;
+    background-color: rgba(226, 228, 229, 0.952);
+    width: 30%;
+    height: 60%; }
+    .img-container div img {
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border-radius: 25px; }
+    .img-container div p {
+      font-family: "Rammetto One", cursive;
+      text-align: center;
+      z-index: 2;
+      position: fixed;
+      top: 24%;
+      color: white;
+      font-size: 6rem;
+      line-height: 9rem;
+      width: 29.5%;
+      height: 23.38%;
+      background-color: rgba(0, 160, 160, 0.233);
+      padding: 14% 0;
+      border-radius: 25px; }
+  .img-container div:hover {
+    transform: scale(1.1); }
+  .img-container div:hover p {
+    transform: scale(1.1);
+    background-color: rgba(0, 160, 160, 0);
+    transform: translateX(50%); }
+  .img-container div:nth-of-type(1) {
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-delay: 0s;
     animation-timing-function: ease-in; }
-  .img-container img:nth-child(2) {
+  .img-container div:nth-of-type(2) {
     animation-name: moveInRight;
     animation-duration: 1s;
     animation-delay: 0s;
