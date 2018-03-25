@@ -15,16 +15,26 @@ var photoGrid = document.getElementById("photoGrid");
 
 
 
-var photoGridImg = document.querySelectorAll(".photoGridImg");
+
 
 function returnHome() {
-    if (active !== "home"){
+    if (active == "photo"){
+//first move grid out
+    swipe.play();
+    photoGrid.classList.remove("moveInLeft");
+    photoGrid.classList.add("moveOutRight");
+    setTimeout(function(){
+        photoGrid.style.display = "none";}, 2000);
+
+    //then bring back home page container
+    setTimeout(function(){
+    imgContainer.style.display = "flex";
     imgContainer.classList.remove("moveOutLeft");
     imgContainer.classList.remove("moveOutRight");
-    imgContainer.style.display = "flex";
-    photoGrid.classList.remove("moveInLeft");
-    photoGrid.style.display = "none";
-    swipe.play();};
+    }, 1500);
+
+}
+
     active = "home";
 };
 
@@ -48,13 +58,13 @@ function photoFunc() {
 
 
 
-function displayPhoto(){
-if (active = "photo"){
-    photoGrid.style.display = "flex";
-    } else if (active !== "photo"){
-        photoGrid.style.display = "none"
-    };
-};
+
+
+// function displayPhoto(){
+// if (active = "photo"){
+//     var gridImg = document.getElementsByClassName("gridImg");
+//     scaleUP(gridImg);
+// };
 
 function scaleUp(){
     pop.play();
@@ -79,8 +89,20 @@ audioBox.addEventListener("click", audioFunc);
 //photo page
 
 
-function imgHover(){
-    pop.play();
-}
-// photoGridImg.addEventListener("click", imgHover);
-// photoGridImg.addEventListener("mouseenter", imgHover);
+// function imgHover(){
+//     pop.play();
+//     this.style.transform ="scale(1.2)";
+// }
+
+var gridImg = document.querySelectorAll(".gridImg");
+
+for (var i = 0 ; i < gridImg.length; i++) {
+    gridImg[i].addEventListener('mouseenter' , scaleUp); 
+ }
+
+ for (var i = 0 ; i < gridImg.length; i++) {
+    gridImg[i].addEventListener('mouseout' , scaleDown); 
+ }
+
+// gridimg.addEventListener("click", imgHover);
+// photoGridImg.addEventListener("mouseenter", imgHover)

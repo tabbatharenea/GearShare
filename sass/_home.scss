@@ -201,17 +201,18 @@ nav {
 
     #audio {
         animation-name: moveInLeft;
-        animation-duration: 1s;
+        animation-duration: .5s;
         animation-delay: 0s;
         animation-timing-function: ease-in;
+        transition: all .25s;
     }
 
     #photo {
         animation-name: moveInRight;
-        animation-duration: 1s;
+        animation-duration: .5s;
         animation-delay: 0s;
         animation-timing-function: ease-in;
-
+        transition: all .25s;
     }
 }
 
@@ -225,8 +226,9 @@ nav {
     justify-content: space-around;
     transition: all 2s 2s;
     display:none;
+}
 
-    img {
+.gridImg {
         border-radius: 25px;
         margin: 1rem;
         width: 30%;
@@ -240,6 +242,5 @@ nav {
         //  }
     }
 
-}
 
 

@@ -219,14 +219,16 @@ nav {
     text-shadow: 0.5px 0px 3px #97979b; }
   #imgContainer #audio {
     animation-name: moveInLeft;
-    animation-duration: 1s;
+    animation-duration: .5s;
     animation-delay: 0s;
-    animation-timing-function: ease-in; }
+    animation-timing-function: ease-in;
+    transition: all .25s; }
   #imgContainer #photo {
     animation-name: moveInRight;
-    animation-duration: 1s;
+    animation-duration: .5s;
     animation-delay: 0s;
-    animation-timing-function: ease-in; }
+    animation-timing-function: ease-in;
+    transition: all .25s; }
 
 #photoGrid {
   order: 3;
@@ -236,13 +238,14 @@ nav {
   justify-content: space-around;
   transition: all 2s 2s;
   display: none; }
-  #photoGrid img {
-    border-radius: 25px;
-    margin: 1rem;
-    width: 30%;
-    height: 30%;
-    transition: .25s all;
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
+
+.gridImg {
+  border-radius: 25px;
+  margin: 1rem;
+  width: 30%;
+  height: 30%;
+  transition: .25s all;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
 
 @media screen and (min-width: 768px) and (orientation: landscape) {
   .img-container .img-box .img-label {
