@@ -1,0 +1,245 @@
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    list-style-type: none;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $font1;
+    font-weight: 400;
+    line-height: 1.8rem;
+    color: $color-grey-dark;
+    padding: 1rem;
+    font-size: 1.3rem;
+
+    background: linear-gradient( to right bottom,
+    rgba($color-primary, 0.7),
+    rgba($color-secondary, 0.5)),
+    url(images/guitar.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+header {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 90%;
+    height: 20rem;
+    min-height: 15rem;
+    border-radius: 25px;
+    
+    transition: .5s all;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    border: 1rem solid $color-tertiary;
+    color: $color-tertiary;
+    background-color: rgba(0, 160, 160, 0.473);
+
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in;
+
+    h1 {
+        padding-top: 2rem;
+        font-family: $font2;
+        text-align: center;
+        font-size: 10vw;
+        letter-spacing: .3rem;
+    
+        transition: .5s all;
+    
+        span {
+            color: white;
+            font-family: $font1;
+            display: block;
+            margin-top:3rem;
+            font-weight: 300;
+            text-align: center;
+            font-size: 1.7rem;
+        }
+    }
+}
+
+header:hover {
+    transform: scale(1.1);
+    background-color:$color-primary;
+}
+
+nav {
+    margin-top: 10rem;
+    border-radius: 25px;
+    order: 2;
+    width: 90%;
+    height: 2.5rem;
+    display: flex;
+    background-color: $color-secondary;
+    color: white;
+    text-transform: uppercase;
+    align-items: center;
+    letter-spacing: .4rem;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in;
+
+    ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    a {
+        border-radius: 25px;
+        padding: .5rem 1.3rem;
+    }
+    a:hover {
+       background-color: $color-primary;
+    }
+    }
+
+}
+
+.moveOutLeft {
+    animation: moveOutLeft 2s ease-in 2s;
+    animation-fill-mode: backwards;
+    // visibility: hidden;
+}
+
+.moveOutRight {
+    transition: 1s 1s all;
+    animation: moveOutRight 1s ease-in .25s;
+    animation-fill-mode: forwards;
+
+}
+
+.moveInLeft {
+    display: flex;
+    animation: moveInLeft .75s ease-in 1s;
+    animation-fill-mode: backwards;
+}
+
+#imgContainer {
+    order: 3;
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    transition: all 2s .25s;
+
+
+    .img-box {
+        border-radius: 25px;
+        padding: 1rem;
+        position: relative;
+        background-color: $color-tertiary;
+        width: 40%;
+        height: 80%;
+        display: flex;
+        transition: .25s 0s scale;
+        // transition: 1s 1s translateX;
+
+        h2 {
+            align-self: center;
+            font-family: $font2;
+            text-align: center;
+            z-index: 2;
+            position: absolute;
+            padding-top: 60%;
+            top: 0;
+            left: 0;
+            color: $color-tertiary;
+            font-size: 7vw;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 160, 160, 0.233);
+            border-radius: 25px;
+        }
+
+        img {
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+        }
+    }
+    
+
+    div:hover  h2 {
+        transform: scale(1.1);
+        background-color:rgba(0, 160, 160, 0.0);
+        text-shadow: .5px 0px 3px $color-grey-dark;
+    }
+
+
+
+    #audio {
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-delay: 0s;
+        animation-timing-function: ease-in;
+    }
+
+    #photo {
+        animation-name: moveInRight;
+        animation-duration: 1s;
+        animation-delay: 0s;
+        animation-timing-function: ease-in;
+
+    }
+}
+
+//photo page
+
+#photoGrid {
+    order: 3;
+    margin-top: 5rem;
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    transition: all 2s 2s;
+    display:none;
+
+    img {
+        border-radius: 25px;
+        margin: 1rem;
+        width: 30%;
+        height: 30%;
+        transition: .25s all;
+        box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    
+
+        // &:hover {
+        //  transform: scale(1.1);
+        //  }
+    }
+
+}
+
+

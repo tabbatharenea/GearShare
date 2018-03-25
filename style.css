@@ -1,71 +1,138 @@
+@keyframes moveInLeft {
+  0% {
+    display: flex;
+    opacity: 0;
+    transform: translateX(-100px); }
+  90% {
+    transform: translateX(10px); }
+  100% {
+    opacity: .8;
+    transform: translate(0); } }
+
+@keyframes moveOutLeft {
+  0% {
+    opacity: 100;
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(-50px); }
+  100% {
+    opacity: 0;
+    transform: translateX(-100px); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(300px); }
+  80% {
+    transform: translateX(-20px); }
+  100% {
+    opacity: .8;
+    transform: translate(0); } }
+
+@keyframes moveOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(50%); }
+  100% {
+    opacity: 0;
+    transform: translateX(400%); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: border-box; }
 
 a {
   text-decoration: none;
   color: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  list-style-type: none; }
 
 body {
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 160, 160, 0.781);
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.8rem;
   color: #97979b;
   padding: 1rem;
-  list-style-type: none;
   font-size: 1.3rem;
-  background-image: linear-gradient(to right bottom, rgba(0, 160, 160, 0.7), rgba(161, 194, 221, 0.5)), url(images/guitar.jpg);
+  background: linear-gradient(to right bottom, rgba(0, 160, 160, 0.7), rgba(161, 194, 221, 0.5)), url(images/guitar.jpg);
   background-size: cover;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center; }
 
 header {
   order: 1;
-  background-size: cover;
-  background-position: 50% 8%;
-  background-attachment: fixed;
-  position: relative;
-  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  color: #e2e4e5;
-  height: 15vh;
+  width: 90%;
+  height: 20rem;
+  min-height: 15rem;
   border-radius: 25px;
-  border: 1rem solid rgba(226, 228, 229, 0.952);
+  transition: .5s all;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  border: 1rem solid rgba(226, 228, 229, 0.952);
+  color: rgba(226, 228, 229, 0.952);
   background-color: rgba(0, 160, 160, 0.473);
   animation-name: moveInRight;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-timing-function: ease-in; }
   header h1 {
-    -webkit-background-clip: text;
-    margin: 1rem;
+    padding-top: 2rem;
     font-family: "Rammetto One", cursive;
     text-align: center;
-    font-size: 6rem;
-    letter-spacing: .6rem;
-    text-shadow: rgba(0, 160, 160, 0.781); }
-  header h2 {
-    margin-top: .5rem;
-    font-weight: 300;
-    text-align: center;
-    font-size: 1.7rem; }
+    font-size: 10vw;
+    letter-spacing: .3rem;
+    transition: .5s all; }
+    header h1 span {
+      color: white;
+      font-family: "Lato", sans-serif;
+      display: block;
+      margin-top: 3rem;
+      font-weight: 300;
+      text-align: center;
+      font-size: 1.7rem; }
+
+header:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 160, 160, 0.781); }
 
 nav {
   margin-top: 10rem;
@@ -95,94 +162,88 @@ nav {
     nav ul a:hover {
       background-color: rgba(0, 160, 160, 0.781); }
 
-.img-container {
+.moveOutLeft {
+  animation: moveOutLeft 2s ease-in 2s;
+  animation-fill-mode: backwards; }
+
+.moveOutRight {
+  transition: 1s 1s all;
+  animation: moveOutRight 1s ease-in .25s;
+  animation-fill-mode: forwards; }
+
+.moveInLeft {
+  display: flex;
+  animation: moveInLeft .75s ease-in 1s;
+  animation-fill-mode: backwards; }
+
+#imgContainer {
   order: 3;
   margin-top: 5rem;
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around; }
-  .img-container div {
+  justify-content: space-around;
+  transition: all 2s .25s; }
+  #imgContainer .img-box {
     border-radius: 25px;
     padding: 1rem;
     position: relative;
     background-color: rgba(226, 228, 229, 0.952);
-    width: 30%;
-    height: 60%; }
-    .img-container div img {
+    width: 40%;
+    height: 80%;
+    display: flex;
+    transition: .25s 0s scale; }
+    #imgContainer .img-box h2 {
+      align-self: center;
+      font-family: "Rammetto One", cursive;
+      text-align: center;
+      z-index: 2;
+      position: absolute;
+      padding-top: 60%;
+      top: 0;
+      left: 0;
+      color: rgba(226, 228, 229, 0.952);
+      font-size: 7vw;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 160, 160, 0.233);
+      border-radius: 25px; }
+    #imgContainer .img-box img {
       z-index: 1;
       width: 100%;
       height: 100%;
       border-radius: 25px; }
-    .img-container div p {
-      font-family: "Rammetto One", cursive;
-      text-align: center;
-      z-index: 2;
-      position: fixed;
-      top: 24%;
-      color: white;
-      font-size: 6rem;
-      line-height: 9rem;
-      width: 29.5%;
-      height: 23.38%;
-      background-color: rgba(0, 160, 160, 0.233);
-      padding: 14% 0;
-      border-radius: 25px; }
-  .img-container div:hover {
-    transform: scale(1.1); }
-  .img-container div:hover p {
+  #imgContainer div:hover h2 {
     transform: scale(1.1);
     background-color: rgba(0, 160, 160, 0);
-    transform: translateX(50%); }
-  .img-container div:nth-of-type(1) {
+    text-shadow: 0.5px 0px 3px #97979b; }
+  #imgContainer #audio {
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-delay: 0s;
     animation-timing-function: ease-in; }
-  .img-container div:nth-of-type(2) {
+  #imgContainer #photo {
     animation-name: moveInRight;
     animation-duration: 1s;
     animation-delay: 0s;
     animation-timing-function: ease-in; }
 
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px); }
-  90% {
-    transform: translateX(10px); }
-  100% {
-    opacity: .8;
-    transform: translate(0); } }
+#photoGrid {
+  order: 3;
+  margin-top: 5rem;
+  width: 100%;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  transition: all 2s 2s;
+  display: none; }
+  #photoGrid img {
+    border-radius: 25px;
+    margin: 1rem;
+    width: 30%;
+    height: 30%;
+    transition: .25s all;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
 
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(300px); }
-  80% {
-    transform: translateX(-20px); }
-  100% {
-    opacity: .8;
-    transform: translate(0); } }
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(30px); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes fadeIn {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  .img-container .img-box .img-label {
+    color: white; } }

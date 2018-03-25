@@ -4,7 +4,7 @@
   "description": "Landing page for gear sharing website",
   "main": "script.js",
   "scripts": {
-    "compile:sass": "node-sass sass.scss style.css -w"
+    "compile:sass": "node-sass sass/main.scss style.css -w"
   },
   "repository": {
     "type": "git",

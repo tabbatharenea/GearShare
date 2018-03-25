@@ -14,8 +14,9 @@
 <body>
 
 <header class="header">
-    <h1 class="heading-primary">GearShare</h1>
-    <h2 class="heading-sub">Connecting you to the gear you need</h2>
+    <h1 class="heading-primary">GearShare
+    <span class="heading-sub">Connecting you to the gear you need</span>
+    </h1>
 </header>
 
 <!-- <nav>
@@ -26,21 +27,35 @@
     </ul>
 </nav> -->
 
-<section class="img-container">
-    <div>
-        <p id="music">Audio</p>
+<section id="imgContainer">
+    <div class="img-box" id="audio">
+        <h2 class="img-label">Audio</h2>
         <img src="images/mic.jpg">
     </div>
-    <div id="photo">
-        <p>Photo</p>
+    <div class="img-box" id="photo">
+        <h2 class="img-label">Photo</h2>
         <img src="images/lens.jpg">
     </div>
+</section>
 
+<section id="photoGrid">
+<img src="images/square/80d.jpg" id="80d" class="photoGridImg">
+<img src="images/square/70200.jpg" id="lens70200" class="photoGridImg">
+<img src="images/square/lens.jpg" id="lens" class="photoGridImg">
+<img src="images/square/map.jpg" id="map" class="photoGridImg">
+<img src="images/square/80d.jpg" id="80d" class="photoGridImg">
+<img src="images/square/80d.jpg" id="80d" class="photoGridImg">
+<img src="images/square/70200.jpg" id="lens70200" class="photoGridImg">
+<img src="images/square/lens.jpg" id="lens" class="photoGridImg">
+<img src="images/square/map.jpg" id="map" class="photoGridImg">
+<img src="images/square/80d.jpg" id="80d" class="photoGridImg">
 
 
 </section>
 
-
+<audio id="pop" src="sounds/pop.mp3"></audio>
+<audio id="swipe" src="sounds/swipe.mp3"></audio>
+<audio id="tink" src="sounds/tink.wav"></audio>
 <script src="script.js"></script>
 </body>
 </html>
