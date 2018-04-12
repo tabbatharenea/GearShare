@@ -248,5 +248,23 @@ nav {
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
 
 @media screen and (min-width: 768px) and (orientation: landscape) {
-  .img-container .img-box .img-label {
-    color: white; } }
+  /* #imgContainer .img-box .img-label {
+    color: white; } */
+
+  header {
+    width: 80rem;
+  }
+
+  header h1 {
+    font-size: 7rem;
+  }
+
+  #imgContainer {
+    width: 80rem;
+    justify-content: space-between;
+  }
+
+  #imgContainer .img-box h2 {
+  font-size: 6rem;
+  }
+}
