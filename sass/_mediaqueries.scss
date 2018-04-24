@@ -1,7 +1,6 @@
 @media screen and (min-width: 768px)
 and (orientation: landscape) {
 
-
     .img-container .img-box .img-label {
       color: white;
     }
@@ -20,5 +19,14 @@ and (orientation: landscape) {
 
     #imgContainer .img-box h2 {
     font-size: 6rem;
+    }
+
+    .squaresGrid {
+      width: 90%;
+    }
+
+    .gridImg {
+    width: 40%;
+    height: 40%;
     }
 }
